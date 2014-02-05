@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 from rest_framework import viewsets, routers
 
 from tmnt.models import Character, Team
+from tmnt.serializers import TeamSerializer
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -10,17 +11,25 @@ from tmnt.models import Character, Team
 
 # ViewSets define the view behavior.
 class CharacterViewSet(viewsets.ModelViewSet):
-    model = Character
+  model = Character
+class BasicTeamViewSet(viewsets.ModelViewSet):
+  model = Team
 class TeamViewSet(viewsets.ModelViewSet):
-    model = Team
+  queryset = Team.objects.all()
+  serializer_class = TeamSerializer
 
 router = routers.DefaultRouter()
 router.register(r'character', CharacterViewSet)
-router.register(r'team', TeamViewSet)
 
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
+    url(r'^team/$', BasicTeamViewSet.as_view({
+    'get': 'list'
+    })),
+    url(r'^team/.+', TeamViewSet.as_view({
+    'get': 'list'
+    }))
     # Examples:
     # url(r'^$', 'smurfs.views.home', name='home'),
     # url(r'^smurfs/', include('smurfs.foo.urls')),
