@@ -3,5 +3,5 @@
 *.pyc
 local_settings.py
 
-/smurf.db
+/sqlite3.db
 /.DS_Store

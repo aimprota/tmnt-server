@@ -13,6 +13,7 @@
   "fields": {
     "team": 1,
     "name": "Michaelangelo",
+    "role": "Party Dude",
     "created": "2013-10-08T18:41:36.457Z"
   }
 },
@@ -22,6 +23,7 @@
   "fields": {
     "team": 1,
     "name": "Leonardo",
+    "role": "Leader",
     "created": "2013-10-08T18:41:47.146Z"
   }
 },
@@ -31,6 +33,7 @@
   "fields": {
     "team": 1,
     "name": "Raphael",
+    "role": "Cool, but crude",
     "created": "2013-10-08T18:41:52.354Z"
   }
 },
@@ -40,6 +43,7 @@
   "fields": {
     "team": 1,
     "name": "Donatello",
+    "role": "Does machines",
     "created": "2013-10-08T18:41:56.914Z"
   }
 }
