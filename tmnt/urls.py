@@ -1,5 +1,6 @@
 from django.conf.urls import patterns, include, url
 from rest_framework import viewsets, routers
+from rest_framework.response import Response
 
 from tmnt.models import Character, Team
 from tmnt.serializers import TeamSerializer
@@ -12,11 +13,13 @@ from tmnt.serializers import TeamSerializer
 # ViewSets define the view behavior.
 class CharacterViewSet(viewsets.ModelViewSet):
   model = Character
-class BasicTeamViewSet(viewsets.ModelViewSet):
+class TeamListViewSet(viewsets.ModelViewSet):
   model = Team
 class TeamViewSet(viewsets.ModelViewSet):
-  queryset = Team.objects.all()
-  serializer_class = TeamSerializer
+  def list(self, request, pk):
+    queryset = Team.objects.filter(id=pk)
+    serializer = TeamSerializer(queryset, many=True)
+    return Response(serializer.data)
 
 router = routers.DefaultRouter()
 router.register(r'character', CharacterViewSet)
@@ -24,10 +27,10 @@ router.register(r'character', CharacterViewSet)
 
 urlpatterns = patterns('',
     url(r'^', include(router.urls)),
-    url(r'^team/$', BasicTeamViewSet.as_view({
+    url(r'^team/$', TeamListViewSet.as_view({
     'get': 'list'
     })),
-    url(r'^team/.+', TeamViewSet.as_view({
+    url(r'^team/(?P<pk>[0-9]+)/$', TeamViewSet.as_view({
     'get': 'list'
     }))
     # Examples:
