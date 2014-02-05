@@ -8,6 +8,14 @@
   }
 },
 {
+  "pk": 2,
+  "model": "tmnt.team",
+  "fields": {
+    "name": "Antagonists",
+    "created": "2013-10-08T18:41:36.457Z"
+  }
+},
+{
   "pk": 1,
   "model": "tmnt.character",
   "fields": {
@@ -44,6 +52,46 @@
     "team": 1,
     "name": "Donatello",
     "role": "Does machines",
+    "created": "2013-10-08T18:41:56.914Z"
+  }
+},
+{
+  "pk": 5,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 2,
+    "name": "The Shredder",
+    "role": "Shreds",
+    "created": "2013-10-08T18:41:56.914Z"
+  }
+},
+{
+  "pk": 6,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 2,
+    "name": "Krang",
+    "role": "Makes plans",
+    "created": "2013-10-08T18:41:56.914Z"
+  }
+},
+{
+  "pk": 7,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 2,
+    "name": "Bebop",
+    "role": "?",
+    "created": "2013-10-08T18:41:56.914Z"
+  }
+},
+{
+  "pk": 8,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 2,
+    "name": "Rocksteady",
+    "role": "Breaks stuff",
     "created": "2013-10-08T18:41:56.914Z"
   }
 }
