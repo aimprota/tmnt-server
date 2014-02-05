@@ -1,0 +1,46 @@
+[
+{
+  "pk": 1,
+  "model": "tmnt.team",
+  "fields": {
+    "name": "Turtles",
+    "created": "2013-10-08T18:41:36.457Z"
+  }
+},
+{
+  "pk": 1,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 1,
+    "name": "Michaelangelo",
+    "created": "2013-10-08T18:41:36.457Z"
+  }
+},
+{
+  "pk": 2,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 1,
+    "name": "Leonardo",
+    "created": "2013-10-08T18:41:47.146Z"
+  }
+},
+{
+  "pk": 3,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 1,
+    "name": "Raphael",
+    "created": "2013-10-08T18:41:52.354Z"
+  }
+},
+{
+  "pk": 4,
+  "model": "tmnt.character",
+  "fields": {
+    "team": 1,
+    "name": "Donatello",
+    "created": "2013-10-08T18:41:56.914Z"
+  }
+}
+]
